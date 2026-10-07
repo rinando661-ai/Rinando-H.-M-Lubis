@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 8 English: Interactive Recount Text (Listening & Speaking)</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        h1 { color: var(--primary); margin-bottom: 5px; font-size: 1.6rem; }
+        .subtitle { color: #64748b; font-weight: 500; font-size: 0.95rem; }
+
+        .card {
+            background: #f1f5f9;
+            border-left: 5px solid var(--primary);
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .section-title {
+            color: var(--primary-dark);
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 6px;
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 0.95rem;
+        }
+
+        .audio-box {
+            text-align: center;
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        button.btn-audio {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button.btn-audio:hover { background-color: var(--primary-dark); }
+
+        .question-block {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: var(--secondary);
+            color: white;
+            width: 100%;
+            padding: 14px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover { background-color: #059669; }
+
+        #resultBox {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #ecfdf5;
+            border: 2px solid var(--secondary);
+        }
+
+        .score-badge {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #047857;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>ENGLISH LEARNING ZONE: RECOUNT TEXT</h1>
+        <p class="subtitle">Listening & Speaking Practice for Grade 8 SMP</p>
+    </header>
+
+    <!-- IDENTITAS PESERTA DIDIK -->
+    <div class="card">
+        <h3>👤 Identitas Peserta Didik</h3>
+        <div class="form-group">
+            <label for="studentName">Nama Lengkap:</label>
+            <input type="text" id="studentName" placeholder="Contoh: Adinda Putri" required>
+        </div>
+        <div class="form-group">
+            <label for="studentClass">Kelas:</label>
+            <select id="studentClass" required>
+                <option value="">-- Pilih Kelas --</option>
+                <option value="8-A">8-A</option>
+                <option value="8-B">8-B</option>
+                <option value="8-C">8-C</option>
+                <option value="8-D">8-D</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- TUJUAN PEMBELAJARAN -->
+    <div class="card">
+        🎯 <strong>Tujuan Pembelajaran Hari Ini:</strong>
+        <ul>
+            <li>Mengidentifikasi ide utama & detail dari teks audio *Recount*.</li>
+            <li>Memahami kosakata kata kerja bentuk lampau (*Past Verbs*).</li>
+            <li>Menceritakan kembali (*retell*) pengalaman dengan santun & intonasi tepat.</li>
+        </ul>
+    </div>
+
+    <!-- MATERI SINGKAT RECOUNT TEXT -->
+    <h2 class="section-title">📚 Brief Material: Recount Text</h2>
+    <p><strong>Recount Text</strong> is a text that tells about past events or experiences.</p>
+    <ul>
+        <li><strong>Social Function:</strong> To inform or entertain the readers/listeners.</li>
+        <li><strong>Generic Structure:</strong>
+            <br>1. <i>Orientation</i> (Who, Where, When)
+            <br>2. <i>Events</i> (What happened in chronological order)
+            <br>3. <i>Reorientation</i> (Personal feeling/ending)</li>
+        <li><strong>Language Features:</strong> Simple Past Tense (went, arrived, felt), Time Connectors (First, After that, Finally).</li>
+    </ul>
+
+    <!-- LISTENING ACTIVITY -->
+    <h2 class="section-title">🎧 Listening Activity: A School Trip</h2>
+    <div class="audio-box">
+        <p>🔊 Klik tombol di bawah untuk mendengarkan cerita (gunakan earphone agar lebih jelas):</p>
+        <button type="button" class="btn-audio" onclick="playAudio()">▶ Listen to Audio Story</button>
+    </div>
+
+    <form id="learningForm">
+        <!-- VOCABULARY ACTIVITY -->
+        <h3 class="section-title">1. Vocabulary Practice</h3>
+        <div class="question-block">
+            <p><strong>Q1. Complete the past form of the verbs used in the story:</strong></p>
+            <label>Go &rarr; <input type="text" id="v1" placeholder="..."></label><br>
+            <label>Arrive &rarr; <input type="text" id="v2" placeholder="..."></label><br>
+            <label>Feel &rarr; <input type="text" id="v3" placeholder="..."></label>
+        </div>
+
+        <!-- MAIN IDEA QUESTIONS -->
+        <h3 class="section-title">2. Listening Comprehension (Main Idea)</h3>
+        <div class="question-block">
+            <p><strong>Q2. What is the speaker's main purpose in telling the story?</strong></p>
+            <div class="radio-group">
+                <label><input type="radio" name="q2" value="A"> A. To invite friends to visit Bogor Botanical Garden.</label>
+                <label><input type="radio" name="q2" value="B"> B. To share a memorable experience during a school trip.</label>
+                <label><input type="radio" name="q2" value="C"> C. To explain how to plant orchid flowers.</label>
+            </div>
+        </div>
+
+        <!-- SPECIFIC DETAIL QUESTIONS -->
+        <h3 class="section-title">3. Listening Comprehension (Specific Details)</h3>
+        <div class="question-block">
+            <p><strong>Q3. What time did they arrive at the Botanical Garden?</strong></p>
+            <div class="radio-group">
+                <label><input type="radio" name="q3" value="A"> A. At 6:30 AM</label>
+                <label><input type="radio" name="q3" value="B"> B. At 8:00 AM</label>
+                <label><input type="radio" name="q3" value="C"> C. At 3:00 PM</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p><strong>Q4. What activity did they do in the afternoon?</strong></p>
+            <div class="radio-group">
+                <label><input type="radio" name="q4" value="A"> A. They played a fun treasure hunt game.</label>
+                <label><input type="radio" name="q4" value="B"> B. They bought souvenirs at the garden.</label>
+                <label><input type="radio" name="q4" value="C"> C. They studied inside the museum.</label>
+            </div>
+        </div>
+
+        <!-- RETELLING & SPEAKING ACTIVITY -->
+        <h3 class="section-title">4. Retelling & Speaking Task</h3>
+        <div class="card" style="border-left-color: #10b981;">
+            🗣️ <strong>Instruction:</strong> Retell the story in your own simple words! <br>
+            <i>Guided Frame: "Last month, the students went to... First, they... Then, they... Finally, they felt..."</i>
+        </div>
+        <div class="form-group">
+            <label for="retellingText">Tuliskan ringkasan lisan/cerita kembali Anda di sini (minimal 3 kalimat):</label>
+            <textarea id="retellingText" rows="4" placeholder="Write your retold story here..." required></textarea>
+        </div>
+
+        <!-- REFLEKSI PEMBELAJARAN -->
+        <h3 class="section-title">💡 Refleksi Pembelajaran</h3>
+        <div class="question-block">
+            <label for="reflection">Bagaimana perasaanmu setelah melakukan latihan listening & speaking hari ini? Bagian mana yang paling kamu sukai?</label>
+            <textarea id="reflection" rows="3" placeholder="Tuliskan refleksimu..." required></textarea>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="processAndSubmit()">🚀 Kirim Hasil Pembelajaran</button>
+    </form>
+
+    <!-- UMPAN BALIK DAN SKOR -->
+    <div id="resultBox">
+        <h2 style="text-align: center; color: var(--secondary);">🎉 Latihan Selesai!</h2>
+        <div class="score-badge" id="scoreDisplay">0 / 100</div>
+        <hr>
+        <h4>📌 Umpan Balik (Automated Feedback):</h4>
+        <p id="feedbackText"></p>
+    </div>
+</div>
+
+<script>
+    // Audio synthesis for Native Pronunciation built-in
+    function playAudio() {
+        const script = "Hello everyone! Last month, my classmates and I went to Bogor Botanical Garden for a school trip. We left school at 6:30 AM by bus. During the journey, we sang songs and played games together. We arrived at the garden at 8:00 AM. First, our teacher showed us giant water lilies and old heritage trees. After that, we visited the Orchid House and took many pictures of colorful flowers. At noon, we ate lunch under a big shade tree and shared our snacks. In the afternoon, we played a fun treasure hunt game. My team won second place! Finally, we packed our things and went home at 3:00 PM. I was tired, but I felt very happy because I learned a lot about nature and spent great time with my friends.";
+        
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(script);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.85; // Natural slow speed for Grade 8
+            window.speechSynthesis.speak(utterance);
+        } else {
+            alert("Sistem audio tidak didukung di browser ini. Silakan gunakan Google Chrome/Safari.");
+        }
+    }
+
+    function processAndSubmit() {
+        const name = document.getElementById('studentName').value.trim();
+        const studentClass = document.getElementById('studentClass').value;
+        const retelling = document.getElementById('retellingText').value.trim();
+        const reflection = document.getElementById('reflection').value.trim();
+
+        if (!name || !studentClass || !retelling || !reflection) {
+            alert("Harap lengkapi Identitas, Teks Retelling, dan Refleksi sebelum mengirim!");
+            return;
+        }
+
+        // Scoring calculation
+        let score = 0;
+
+        // Vocabulary scoring (Max 20)
+        const v1 = document.getElementById('v1').value.trim().toLowerCase();
+        const v2 = document.getElementById('v2').value.trim().toLowerCase();
+        const v3 = document.getElementById('v3').value.trim().toLowerCase();
+        if (v1 === 'went') score += 7;
+        if (v2 === 'arrived') score += 7;
+        if (v3 === 'felt') score += 6;
+
+        // Main idea scoring (Max 20)
+        const q2 = document.querySelector('input[name="q2"]:checked');
+        if (q2 && q2.value === 'B') score += 20;
+
+        // Specific details scoring (Max 30)
+        const q3 = document.querySelector('input[name="q3"]:checked');
+        if (q3 && q3.value === 'B') score += 15;
+
+        const q4 = document.querySelector('input[name="q4"]:checked');
+        if (q4 && q4.value === 'A') score += 15;
+
+        // Retelling completeness (Max 30)
+        if (retelling.length > 30) score += 30;
+        else score += 15;
+
+        // Display results
+        document.getElementById('resultBox').style.display = 'block';
+        document.getElementById('scoreDisplay').innerText = score + " / 100";
+
+        let feedback = "";
+        if (score >= 85) {
+            feedback = "Sangat Luar Biasa! Kamu memahami ide utama, detail cerita, dan kosakata Recount Text dengan sangat baik. Praktikkan kembali menceritakan ini secara lisan dengan intonasi yang baik!";
+        } else if (score >= 70) {
+            feedback = "Bagus sekali! Kamu sudah memahami sebagian besar cerita. Perhatikan kembali penggunaan past verbs (went, arrived, felt) dan urutan peristiwa.";
+        } else {
+            feedback = "Tetap semangat! Dengarkan kembali audio di atas, lalu fokus pada kosa kata kata kerja bentuk lampau (Past Tense). Sering-seringlah berlatih!";
+        }
+        document.getElementById('feedbackText').innerText = feedback;
+
+        // Send data to Google Spreadsheet via Web App URL
+        sendToGoogleSheet(name, studentClass, score, retelling, reflection, feedback);
+    }
+
+    function sendToGoogleSheet(name, studentClass, score, retelling, reflection, feedback) {
+        // Ganti URL ini dengan Apps Script Web App URL setelah dideploy
+        const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+        
+        const payload = {
+            timestamp: new Date().toLocaleString('id-ID'),
+            name: name,
+            class: studentClass,
+            score: score,
+            retelling: retelling,
+            reflection: reflection,
+            feedback: feedback
+        };
+
+        fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        }).then(() => {
+            console.log("Data berhasil dikirim ke Google Spreadsheet!");
+        }).catch(err => console.error("Error sending data:", err));
+    }
+</script>
+</body>
+</html>
